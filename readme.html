@@ -1,0 +1,301 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" type="text/css" media="screen" href="readme_files/topo.css"><title>The Topographica Neural Map Simulator</title></head><body bgcolor=""><blockquote>
+</hr>
+Note from ModelDB administrator: this page was copied from a local installation of topographica.  Not all the links work here, but if you download topographica from sourceforge (that link below will work) you can get started following the included documentation in the readme.txt, and then the doc directory.
+<hr/>
+
+<table cellpadding="20" width="100%"><tbody><tr><td bgcolor="#f0e0c6">
+<center>
+<table background="readme_files/topo-subbanner-bg" border="0" height="113" width="420"><tbody><tr><td><center>
+<font size="+11"><i>&nbsp;</i></font><!-- Moves text down slightly -->
+<i><font font-style="italic" face="serif" size="+3"><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Downloads</i></font></i></center>
+</td></tr></tbody></table>
+</center>
+</td></tr></tbody></table>
+<table border="0" cellpadding="10" width="100%"><tbody><tr><td bgcolor="#f0e0c4" valign="top" width="145"><table border="0" width="140"><tbody><tr><td bgcolor="#f0e0c4" valign="top">  <table valign="top" border="0" cellpadding="8" cellspacing="3" width="100%">    <tbody><tr><td bgcolor="#e9d3a2"><a href="file:///home/morse/archive/topographica-0.9.1/doc/Home/index.html" class="button"><font face="sans-serif"><b>Home</b></font></a></td></tr>    <tr><td bgcolor="#e9d3a2"><a href="file:///home/morse/archive/topographica-0.9.1/doc/Tutorials/index.html" class="button"><font face="sans-serif"><b>Tutorials</b></font></a></td></tr>    <tr><td bgcolor="#e9d3a2"><a href="file:///home/morse/archive/topographica-0.9.1/doc/User_Manual/index.html" class="button"><font face="sans-serif"><b>User Manual</b></font></a></td></tr>    <tr><td bgcolor="#e9d3a2"><a href="file:///home/morse/archive/topographica-0.9.1/doc/Reference_Manual/index.html" class="button"><font face="sans-serif"><b>Reference Manual</b></font></a></td></tr>    <tr><td bgcolor="#e9d3a2"><a href="file:///home/morse/archive/topographica-0.9.1/doc/Developer_Manual/index.html" class="button"><font face="sans-serif"><b>Developer Manual</b></font></a></td></tr>    <tr><td bgcolor="#e9d3a2"><a href="file:///home/morse/archive/topographica-0.9.1/doc/Downloads/index.html" class="button"><font face="sans-serif"><b>Downloads</b></font></a></td></tr>    <tr><td bgcolor="#e9d3a2"><a href="file:///home/morse/archive/topographica-0.9.1/doc/Forums/index.html" class="button"><font face="sans-serif"><b>Forums</b></font></a></td></tr>    <tr><td bgcolor="#e9d3a2"><a href="file:///home/morse/archive/topographica-0.9.1/doc/Team_Members/index.html" class="button"><font face="sans-serif"><b>Team Members</b></font></a></td></tr>    <tr><td bgcolor="#e9d3a2"><a href="file:///home/morse/archive/topographica-0.9.1/doc/Future_Work/index.html" class="button"><font face="sans-serif"><b>Future Work</b></font></a></td></tr>    <tr><td bgcolor="#e9d3a2"><a href="file:///home/morse/archive/topographica-0.9.1/doc/Links/index.html" class="button"><font face="sans-serif"><b>Links</b></font></a></td></tr>  </tbody></table></td></tr></tbody></table>
+</td><td bgcolor="#f0e0c6" valign="top"><p>Topographica is currently under very active development, with many
+changes made daily. Developers, users who plan to modify any of the source 
+files, and users who wish to receive frequent updates, should obtain
+Topographica using <a href="http://www.nongnu.org/cvs/">CVS</a> (the version 
+control system used for managing Topographica development), as detailed
+below.
+
+</p><p>Alternatively, installation packages are available for Linux, Windows, and
+Macintosh at our Sourceforge 
+<a href="http://sourceforge.net/project/showfiles.php?group_id=53602">downloads</a> 
+page. These packages simplify the process of installation (at the cost of making
+it slightly more difficult to upgrade to new versions). Linux and Mac users should 
+download the desired archive package and then follow the 'Building Topographica' 
+instructions below; Windows users can download and run an .exe file, which will 
+perform all the necessary steps.
+
+
+</p><h2>Installing using CVS</h2>
+
+<p>Topographica is hosted by
+<a href="http://sourceforge.net/projects/topographica">
+SourceForge.net</a>, which maintains the CVS repository.  The
+essentials for using CVS at SourceForge are described below; see the
+<a href="http://sourceforge.net/docman/display_doc.php?docid=29894&amp;group_id=1">
+SourceForge documentation</a> for more details or if you have any
+difficulties.
+
+</p><p>To get started, first change to a directory to which you have write
+access with sufficient space available, i.e., about 400 megabytes as
+of 2/2006. There are two ways to get your own local copy of the CVS
+files, depending on whether or not you are an official Topographica
+developer. Non-developers can check out a read-only version of the
+repository, while developers have read/write access so that they can
+make changes that become a permanent part of the project
+repository. Please follow the appropriate set of instructions below.
+
+</p><h3>Read-only access</h3>
+
+<p>For read-only access from UNIX, Mac, or
+<a href="http://www.cygwin.com/">Cygwin</a> (Windows with Unix
+commands installed), log in to the CVS server using the command:
+
+</p><pre>  cvs -d :pserver:anonymous@topographica.cvs.sf.net:/cvsroot/topographica login
+</pre>
+
+When a password is requested, just press return.  Then change to
+wherever you want the files to be stored, and use the command:
+
+<pre>  cvs -d :pserver:anonymous@topographica.cvs.sf.net:/cvsroot/topographica
+  checkout -P -r LATEST_STABLE topographica
+</pre>
+
+(where the entire command should be on a single line, even though it
+is broken into two lines above).  This process will likely take
+several minutes (probably appearing to hang at certain points), as
+there are some extremely large files involved.  The <code>-r
+LATEST_STABLE</code> option selects the version that has most recently
+been declared to pass all tests.  That option can be omitted if you
+want the absolutely most up-to-date version, which may not always be
+usable due to work in progress.
+
+<p>In Windows without Cygwin, you can retrieve the files using
+<a href="http://www.tortoisecvs.org/">TortoiseCVS</a> (tested 2/2006
+using TortoiseCVS 1.8.25).  After installing TortoiseCVS, open the
+Windows directory where you want the files to be located on your
+machine, right click, select "CVS Checkout", fill in CVSROOT as
+<code>:pserver:anonymous@topographica.cvs.sf.net:/cvsroot/topographica</code>, and
+type in <code>topographica</code> for the module name.  Before
+clicking OK, select the "Revision" tab and select "Choose branch or
+tag", filling in "LATEST_STABLE" as the tag name (unless you want the
+latest bleeding-edge development version).  When you click OK, the
+files should be downloaded for you (though it may take some time).
+
+</p><h3>Read/write access</h3>
+
+For developers wanting read/write access, no login step is needed.
+However, you may need to tell CVS to use <code>ssh</code>, because
+most systems default to rsh, yet rsh is almost never supported in practice.
+Just type <code>export CVS_RSH=ssh</code> for <code>sh/bash</code> or
+<code>setenv CVS_RSH ssh</code> for csh/tcsh; you may wish to put this
+in your shell startup file.  The checkout command is then:
+
+<pre>  cvs -d ':ext:<i>uname</i>@topographica.cvs.sf.net:/cvsroot/topographica' checkout topographica
+</pre>
+
+where <i>uname</i> should be replaced with your SourceForge.net
+username.  You will be asked for your SourceForge.net password.  If
+instead you get a message about rsh timing out, you have probably
+forgotten to do the CVS_RSH command.  The LATEST_STABLE option can
+also be provided as above, but developers will more likely want the
+most up-to-date version for editing.
+
+<p>Windows users can use the read-only procedure described
+for TortoiseCVS above, replacing CVSROOT with
+<code>:ext:<i>uname</i>@topographica.cvs.sf.net:/cvsroot/topographica</code>.
+You will typically need to have an SSH client installed for this to
+work, such as
+<a href="http://www.chiark.greenend.org.uk/%7Esgtatham/putty/">PuTTY</a>.
+
+</p><p>Note that anyone interested in Topographica is welcome to join as a
+Topographica developer to get read/write access, so that your changes
+can become part of the main distribution.  Just email
+<a href="mailto:jbednar@inf.ed.ac.uk?subject=Request%20to%20be%20a%20Topographica%20developer">Jim</a>
+and describe what you want to do, and he'll tell you what to do from there.
+
+
+</p><h3>Problems with CVS?</h3>
+
+Sometimes the SourceForge.net cvs service experiences problems. If you
+receive messages such as "connection closed by remote host", or the
+cvs connection times out, you may wish to check the SourceForge.net 
+<a href="https://sourceforge.net/docman/display_doc.php?docid=2352&amp;group_id=1">status
+page</a>. Be aware that this page is not always updated as fast as
+problems appear.
+
+
+<h3>Building Topographica</h3>
+
+The <code>topographica</code> directory you have now checked out
+includes the files necessary to build Topographica on most platforms.
+To make the build process simpler for developers using multiple
+platforms, source code versions of the libraries needed are included,
+and are created as part of the build process.  This approach makes the
+initial compilation time longer and the simulator directory larger,
+but it minimizes the changes necessary for specific platforms and
+operating system versions.
+
+<p><b>Linux:</b>
+To build Topographica under Linux, just type <code>make</code> from
+within the <code>topographica/</code> directory.  The build process
+will take a while to complete (e.g. about 5-10 minutes on a 1.5GHz
+Pentium IV machine with a local disk).  If you have PHP installed, you
+can also make local copies of the HTML documentation from the web
+site; to do so, type "make all" instead of (or after) "make".  "make
+all" will also run the regression tests and example files, to ensure
+that everything is functioning properly on your system.  (Note that if
+you do the tests on a machine without a functioning DISPLAY, such as a
+remote text-only session, there will be some warnings about GUI tests
+being skipped.)
+
+</p><p>If all goes well, a script named <code>topographica</code> will be
+created in the <code>topographica/</code> directory; you can use this
+to start Topographica as described in the <a href="file:///home/morse/archive/topographica-0.9.1/doc/Tutorials/index.html">Tutorials</a>.  If you have problems,
+try adding <code>-k</code> to the <code>make</code> command, which
+will allow the make process to skip any components that do not build
+properly on your machine. Topographica is highly modular, and most
+functionality should be accessible even without some of those
+components.
+
+</p><p><b>UNIX:</b>
+Topographica is developed under Linux, but should work on other
+versions of UNIX as well, as long as they have standard GNU tools like
+make and GCC installed.  Just follow the Linux instructions, replacing
+<code>make</code> with <code>gmake</code> if that's the name of GNU make on your system.
+
+</p><p><b><a name="osx">Mac:</a></b>
+Topographica builds only under Mac OS X or later.  These instructions
+assume that you have an X server installed.  It is also possible to
+build Topographica using a native (Aqua) version of Python, which
+looks a bit nicer, but we have not yet documented how to do that.
+
+</p><p>To install under Mac OS X 10.4 (Tiger):
+
+</p><ol>
+<li> From the Apple developer web site, download 
+<a href="http://developer.apple.com/tools/xcode/index.html">XCode_Tool2.2</a>
+(among other development utilities, it provides the gcc C/C++
+compiler for Topographica to use).
+</li><li> Specify gcc 3.3 using: <code>sudo gcc_select 3.3</code>.  The
+default 4.0 compiler is fine for most of the included packages, but
+some people have reported that SciPy (weave) does not work with gcc 4.0.
+</li><li> Download and install the <a href="http://fink.sourceforge.net/download/">Fink</a> package.
+Also install the FinkCommander GUI, which makes finding and installing Unix software
+more convenient.
+</li><li> With Fink, find and install the following packages: <code>libpng</code> and 
+<code>freetype219</code> (they provide, respectively, the PNG format
+handling and the matplotlib library installation required to run
+Topographica).
+</li><li> If you want to compile the local copy of the documentation
+(e.g. for online help), use Fink to get imagemagick, transfig, and m4,
+plus php if it's not already installed.
+</li><li> If CVS is not already installed on your Mac, find and install <code>cvsup</code>
+(and the associated library and client) with Fink.
+</li><li> Get, unpack, and make Topographica using CVS as described above.
+</li></ol>
+
+<p> Other OS X versions may require small changes to this procedure,
+to make sure that compatible libraries are available.
+
+
+</p><p><b>Windows:</b> 
+Double click on setup.bat in the Topographica directory.
+After installation, '.ty' files are associated with Topographica.
+Follow the instructions below for running Topographica (from a 
+command prompt), or double click on one of the .ty scripts in the 
+examples directory. 
+
+</p><p>Instead of using the Windows versions of the various support tools
+for Topographica, it should be possible to build Topographica on <a href="http://www.cygwin.com/">Cygwin</a>, but it may be necessary to 
+modify some of the makefiles.
+<!--CEBHACKALERT: it might do ok, the problem was building tkinter - try
+disabling that from happening, and using cygwin's tkinter?-->
+
+
+<!--One day we might have instructions for building Topographica
+on Windows, compiling everything from source.-->
+
+</p><h3>Running Topographica</h3>
+
+Once you have the code installed and built, go to your
+topographica/ directory and type e.g.:
+
+<pre>  ./topographica -g examples/cfsom_or.ty
+</pre>
+
+or
+
+<pre>  ./topographica -g examples/hierarchical.ty
+</pre>
+
+or
+
+<pre>  ./topographica -g examples/som_retinotopy.ty
+</pre>
+
+or
+
+<pre>  ./topographica -g examples/lissom_oo_or.ty
+</pre>
+
+<small>(Windows users should omit the initial <code>./</code>, and replace the
+second <code>/</code> with a backslash <code>\</code>)</small><br><br>
+For the latter two examples, a good way to get started is to work through 
+the <a href="file:///home/morse/archive/topographica-0.9.1/doc/Tutorials/som_retinotopy.html">SOM</a> or 
+<a href="file:///home/morse/archive/topographica-0.9.1/doc/Tutorials/lissom_oo_or.html">LISSOM</a> tutorials.
+
+
+<h3>Updating Topographica</h3>
+
+CVS users who have Topographica checked out can update to the latest
+stable version at any time by doing:
+
+<pre>  cd topographica
+  cvs update -d -P -r LATEST_STABLE
+  make all
+</pre>
+
+<p>If you want the very most recent version, stable or not, replace
+<code>-r LATEST_STABLE</code> with <code>-A</code> to force a complete
+update. Under TortoiseCVS in Windows, you can right click in the
+topographica directory and select CVS Update to get the new files.
+
+</p><p>Note that updating the external/ subdirectory sometimes takes a
+long time, if some of the external packages have been upgraded, and in
+that case "make all" can also take some time to build.
+
+</p><p>Users of Topographica who don't use CVS (having downloaded one of the 
+archive or binary packages) can subscribe to the 
+<a href="https://lists.sourceforge.net/lists/listinfo/topographica-announce">topographica-announce</a> mailing list to hear about updates.
+
+
+</p></td></tr></tbody></table>
+<p>
+<table border="0" cellpadding="0" width="100%"><tbody><tr><td bgcolor="black">
+<table border="0" cellpadding="10" width="100%"><tbody><tr><td bgcolor="white">
+
+<p>
+<table width="100%"><tbody><tr>
+  <td align="left">
+ 	<font size="-1">Hosted by:</font>
+	<a target="_top" href="http://sourceforge.net/"><img src="readme_files/sflogo" alt="SourceForge Logo" align="middle" border="0" height="31" width="105"></a>
+  </td>
+  <td align="left"><small>
+  <i><a target="_top" href="http://homepages.inf.ed.ac.uk/jbednar">James
+      A. Bednar</a>
+  (<a href="mailto:jbednar@inf.ed.ac.uk">jbednar@inf.ed.ac.uk</a>)</i><small></small></small></td>
+  <td align="right"><small><i>Last update: 
+Sun Jul 23 13:06:19 BST 2006</i><small><img src="readme_files/logaccess" height="1" width="1">
+</small></small></td>
+  </tr>
+</tbody></table>
+</p></td></tr></tbody></table>
+</td></tr></tbody></table>
+
+</p></blockquote></body></html>
