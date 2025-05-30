@@ -125,4 +125,4 @@ Users of Topographica who don't use CVS (having downloaded one of the archive or
 
 ---
 
-2025-05-30: Standardized to Markdown, and converted original HTML formatting to Markdown syntax.
+2025-05-30: Standardized to Markdown.
